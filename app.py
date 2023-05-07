@@ -8,9 +8,9 @@ from email.mime.text import MIMEText
 app= Flask(__name__)
 app.config
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '5248'
+app.config['MYSQL_HOST'] = 'db-mysql-nyc1-28236-do-user-14016281-0.b.db.ondigitalocean.com'
+app.config['MYSQL_USER'] = 'doadmin'
+app.config['MYSQL_PASSWORD'] = 'AVNS_pE8xhEROcPMIlB6smcm'
 app.config['MYSQL_DB'] = 'mydb'
 mysql = MySQL(app)
 
