@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>prueba taller proyecto</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+  <main>
+
+
+            <!-- BARRA DE NAVEGACION -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light transparent-navbar blurred-navbar navbar-text" style="width:100%; margin:0;">
+      <a class="navbar-brand" href="index.html">
+      <img src="/static/logo/logo.png" alt="Your Logo" height="80">
+    </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="inicio_medico.html">Pacientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="citas.html">Citas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactos.html">Contactos</a>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+    <br>
+    <br>
+ <!-- FIN DE BARRA DE NAVEGACION --> 
+
+<!--FORMULARIO-->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+  <div class="flash-message">
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  </div>
+{% endif %}
+{% endwith %}
+<div class="form-wrapper">
+  <h2 id="titulo-formulario">Quieres una cita? <br> Ingresa tus datos aqui!</h2>
+  <form action="{{ url_for('generar_cita') }}" method="POST">
+    <div class="form-group">
+      <label for="correo">Correo:</label>
+      <input type="text" id="correo" name="correo" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Correo Electronico" required>
+    </div>
+    <div class="form-group">
+      <label for="date">Fecha:</label>
+      <input type="date" id="date" name="date" placeholder="Fecha" required min="{{ today.strftime('%Y-%m-%d') }}">
+    </div>    
+    <div class="form-group">
+      <label for="motivo">Motivo:</label>
+      <input type="text" id="motivo" name="motivo" placeholder="motivo" required>
+    </div>
+    <div class="form-group">
+      <label for="tipo">Tipo de cita:</label>
+      <select id="tipo" name="tipo" required>
+        <option value="">Elige tu tipo de cita</option>
+        <option value="Medico general">Medico general</option>
+        <option value="Pediatra">Pediatra</option>
+        <option value="Ginecologo">Ginecologo</option>
+        <option value="Cardiologo">Cardiologo</option>
+        <option value="Neurologo">Neurologo</option>
+        <option value="Dermatologo">Dermatologo</option>
+        <option value="Odontologo">Odontologo</option>
+      </select>
+    </div>
+    <br>
+    <button type="submit">Generar cita</button>
+  </form>
+  <p>Ya tienes cuenta? <a href="/inicio.html">Dale click aqui para iniciar sesion!</a>.</p>
+
+  <p>Eres Doctor? <a href="/inicio_medico.html">Dale Click aqui para iniciar sesion!</a>.</p>
+</div>
+<br>
+<br>
+ <!--FIN DE FOMULARIO-->
+
+
+
+<!--FOOTER-->
+<br>
+<footer>
+  <p>TALLER DE DESARROLLO 4 &copy; BRYAN ANDREW CASTRO VALENCIA 6M</p>
+</footer>
+
+<!--FIN DE FOOTER-->
+  </main>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

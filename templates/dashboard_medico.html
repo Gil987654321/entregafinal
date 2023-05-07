@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+  <main>
+
+            <!-- BARRA DE NAVEGACION -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light transparent-navbar blurred-navbar navbar-text" style="width:100%; margin:0;">
+      <a class="navbar-brand" href="dashboard_medico.html">
+      <img src="/static/logo/logo.png" alt="Your Logo" height="80">
+    </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/pacientes">Pacientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/list_citas">Citas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactos.html">Contactos</a>
+          </li>
+        </ul>
+        <div class="greetings">
+            <p class="grettings">Buenos dias Dr {{ nombre }}</p>
+        </div>
+        <div class="logout">
+          <form method="POST" action="{{ url_for('logout') }}">
+            <button type="submit" class="btn btn-primary">Logout</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- FIN DE BARRA DE NAVEGACION --> 
+
+    <!-- GREETING MESSAGE -->
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+          <h1>iniciaste sesion con el correo {{ correo }}</h1> <br>
+          <p>Bienvenido Doctor {{nombre}}.</p>
+        </div>
+      </div>
+    </div>
+    <!-- END OF GREETING MESSAGE -->
+
+    <!-- CONTENT GOES HERE -->
+
+    <!--FOOTER-->
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer>
+      <p>TALLER DE DESARROLLO 4 &copy; BRYAN ANDREW CASTRO VALENCIA 6M</p>
+    </footer>
+    <!--FIN DE FOOTER-->
+  </main>
+
+  <script src="/static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

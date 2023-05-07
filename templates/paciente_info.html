@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ paciente[1] }} {{ paciente[2] }} {{ paciente[3] }}</title>
+    <style>
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        color: #333;
+        background-color: #fff;
+      }
+      h1 {
+        font-size: 36px;
+        margin: 20px 0;
+        text-align: center;
+        color: #1f1f1f;
+        
+      }
+      p {
+        margin: 10px 0;
+        line-height: 1.5;
+      }
+      .info-box {
+        border: 2px solid #0072c6;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #f2f2f2;
+      }
+      .info-box h2 {
+        font-size: 24px;
+        margin: 0;
+        color: #393939;
+        
+      }
+      .info-box p.label {
+        font-weight: bold;
+        color: #0072c6;
+      }
+      .info-box p.value {
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="/home/andrew/proyecto/static/logo/logo.png" alt="Logo">
+    <h1>Información del paciente</h1>
+    <div class="info-box">
+      <h2>{{ paciente[1] }} {{ paciente[2] }} {{ paciente[3] }}</h2>
+      <p class="label">ID:</p><p class="value">{{ paciente[0] }}</p>
+      <p class="label">Nombres:</p><p class="value">{{ paciente[1] }}</p>
+      <p class="label">Apellido Paterno:</p><p class="value">{{ paciente[2] }}</p>
+      <p class="label">Apellido Materno:</p><p class="value">{{ paciente[3] }}</p>
+      <p class="label">Correo:</p><p class="value">{{ paciente[4] }}</p>
+      <p class="label">Teléfono:</p><p class="value">{{ paciente[6] }}</p>
+      <p class="label">Ciudad:</p><p class="value">{{ paciente[7] }}</p>
+      <p class="label">Sexo:</p><p class="value">{{ paciente[8] }}</p>
+    </div>
+  </body>
+</html>

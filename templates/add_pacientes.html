@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>contactos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='contacts.css') }}">
+  </head>
+  <body>
+    <div class="form-wrapper">
+        <h2 id="titulo-formulario">Agregar paciente</h2>
+        <form action="{{ url_for('add_pacientes') }}" method="POST">
+          <div class="form-group">
+            <label for="nombre"> Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="apellido_pat">Apellido Paterno:</label>
+            <input type="text" id="apellido_pat" name="apellido_pat" placeholder="Apellido Paterno" required>
+          </div>
+          <div class="form-group">
+            <label for="apellido_mat">Apellido Materno:</label>
+            <input type="text" id="apellido_mat" name="apellido_mat" placeholder="Apellido Materno" required>
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo Electronico:</label>
+            <input type="text" id="correo" name="correo" placeholder="Correo" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" placeholder="password" required>
+          </div>
+          <div class="form-group">
+            <label for="telefono">Numero Telefonico:</label>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" placeholder="Numero Telefonico" required>
+          </div>
+            <div class="form-group">
+            <label for="cuidad">Cuidad:</label>
+            <input type="text" id="cuidad" name="cuidad" placeholder="Cuidad" required>
+          </div>
+          <div class="form-group">
+            <label for="sexo">sexo:</label>
+            <select id="sexo" name="sexo" required>
+              <option value="">Elige tu sexo</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <button type="submit">Agregar paciente</button>
+        </form>
+      </div>
+  </body>
+</html>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ cita[paciente_nombre] }} {{ cita[medico_nombre] }} {{ cita[3] }}</title>
+    <style>
+      body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        color: #333;
+        background-color: #fff;
+      }
+      h1 {
+        font-size: 36px;
+        margin: 20px 0;
+        text-align: center;
+        color: #1f1f1f;
+        
+      }
+      h2 {
+        text-align: center;
+      }
+      p {
+        margin: 10px 0;
+        line-height: 1.5;
+      }
+      .info-box {
+        border: 2px solid #0072c6;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #f2f2f2;
+      }
+      .info-box h2 {
+        font-size: 24px;
+        margin: 0;
+        color: #393939;
+        
+      }
+      .info-box p.label {
+        font-weight: bold;
+        color: #0072c6;
+      }
+      .info-box p.value {
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="/home/andrew/proyecto/static/logo/logo.png" alt="Logo">
+    <h1>Información de cita del paciente</h1>
+    <div class="info-box">
+      <h2>{{ cita[1] }} cita medica con Dr(a). {{ cita[2] }} tipo: {{cita[7]}} para {{cita[3]}}</h2>
+      <p class="label">ID Cita:</p><p class="value">{{ cita[0] }}</p>
+      <p class="label">Nombre del paciente:</p><p class="value">{{ cita[1] }}</p>
+      <p class="label">Nombre del Medico:</p><p class="value">{{ cita[2] }}</p>
+      <p class="label">Fecha de cita:</p><p class="value">{{ cita[3] }}</p>
+      <p class="label">Correo del paciente:</p><p class="value">{{ cita[4] }}</p>
+      <p class="label">Fecha Creado:</p><p class="value">{{ cita[6] }}</p>
+      <p class="label">Tipo de consulta:</p><p class="value">{{ cita[7] }}</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Pacientes</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='contacts.css') }}">
+</head>
+<body>
+  <h1>Listado de Pacientes</h1>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Correo</th>
+        <th>Telfono</th>
+        <th>Cuidad</th>
+        <th>Acciones</th>
+        <th>Generar PDF</th> <!-- new column -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for paciente in pacientes %}
+        <tr>
+          <td>{{ paciente[0] }}</td>
+          <td>{{ paciente[1] }}</td>
+          <td>{{ paciente[2] }}</td>
+          <td>{{ paciente[3] }}</td>
+          <td>{{ paciente[4] }}</td>
+          <td>{{ paciente[6] }}</td>
+          <td>{{ paciente[7] }}</td>
+          <td>
+            <a href="{{ url_for('edit_paciente', id=paciente[0]) }}">Editar</a>
+            
+            <form action="{{ url_for('delete_paciente', id=paciente[0]) }}" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              <button type="submit">Eliminar</button>
+            </form>
+          </td>
+          <td>
+            <form action="{{ url_for('generate_pdf', id=paciente[0]) }}" method="post">
+              <input type="hidden" name="_method" value="POST">
+              <button type="submit">Generar PDF</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{{ url_for('add_pacientes') }}">Agregar Paciente</a>
+</body>
+</html>

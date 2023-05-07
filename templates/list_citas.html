@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Citas</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='contacts.css') }}">
+</head>
+<body>
+  <h1>Listado de Citas</h1>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Paciente</th>
+        <th>Médico</th>
+        <th>Fecha</th>
+        <th>Correo</th>
+        <th>Motivo</th>
+        <th>Creado</th>
+        <th>Tipo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cita in citas %}
+  <tr>
+    <td>{{ cita[0] }}</td>
+    <td>{{ cita[1] }}</td>
+    <td>{{ cita[2] }}</td>
+    <td>{{ cita[3] }}</td>
+    <td>{{ cita[4] }}</td>
+    <td>{{ cita[5] }}</td>
+    <td>{{ cita[6] }}</td>
+    <td>{{ cita[7] }}</td>
+    <td>
+      <form action="{{ url_for('generate_pdf_cita', id=cita[0]) }}" method="post">
+        <input type="hidden" name="_method" value="POST">
+        <button type="submit">Generar PDF</button>
+      </form>
+    </td>
+  </tr>
+{% endfor %}

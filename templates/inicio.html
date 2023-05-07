@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+  <main>
+
+    <!-- BARRA DE NAVEGACION -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light transparent-navbar blurred-navbar navbar-text" style="width:100%; margin:0;">
+      <a class="navbar-brand" href="index.html">
+      <img src="/static/logo/logo.png" alt="Your Logo" height="80">
+    </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="inicio_medico.html">Pacientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="citas.html">Citas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactos.html">Contactos</a>
+          </li>
+        </ul>
+        <div class="ml-auto">
+          <button type="button" class="btn btn-primary" onclick="window.location.href='registro.html'">Registrarse</button>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <br>
+    <!-- FIN DE BARRA DE NAVEGACION --> 
+<br>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="flash-message">
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+<br><br><br>
+    <!-- FORMULARIO DE LOGIN -->
+    <div class="form-wrapper">
+      <h2 id="titulo-formulario">Iniciar Sesión</h2>
+      <form action="/login.html" method="POST">
+        <div class="form-group">
+          <label for="correo">Correo:</label>
+          <input type="text" id="correo" name="correo" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Correo Electrónico" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        </div>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <p>No tienes una cuenta? <a href="/registro.html">Dale click aqui para Registrarse!</a>.</p>
+      <p>Es doctor? <a href="/inicio_medico.html">Dale click aqui!</a>.</p>
+    </div>
+    <!-- FIN DE FORMULARIO DE LOGIN -->
+
+    <!--FOOTER-->
+    <br><br><br><br><br><br>
+    <footer>
+      <p>TALLER DE DESARROLLO 4 &copy; BRYAN ANDREW CASTRO VALENCIA 6M</p>
+    </footer>
+    <!--FIN DE FOOTER-->

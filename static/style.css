@@ -1,0 +1,187 @@
+
+  /* General styles    */
+  body {
+    font-family: Verdana, sans-serif;
+    background: url('/static/background/image.jpg');
+    background-size: cover;
+  }
+  
+  .transparent-navbar {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    color: rgb(52, 52, 52) !important;
+    
+  }
+
+  .navbar-nav .nav-item a {
+    color: rgb(52, 52, 52) !important ;
+  }
+ 
+
+  .blurred-navbar {
+    backdrop-filter: blur(10px);
+  }
+
+  
+  .no-blur {
+    backdrop-filter: none;
+  }
+  
+  .btn-primary{
+    display: inline-block;
+    background-color: #1060b1;
+    padding: 13px;
+    width: 130px;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .carousel-image {
+    float: left;
+    width:  100px;
+    height: 450px;
+    object-fit: cover;
+  }
+  
+.carousel{
+  background-color: #FFFFFF;
+}
+.heading1{
+  font: Helvetica;
+  font-style: oblique;
+  font-weight: 900; 
+  font-size:4vw;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 130px;
+  text-align: center;
+  padding-left: 80px;
+  background-color: #17327c;
+}
+
+.heading2{
+  font: Helvetica;
+  font-style: oblique;
+  font-weight: 900; 
+  font-size:4vw;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 130px;
+  text-align: center;
+  padding-left: 120px;
+  background-color: #17327c;
+}
+
+.heading3{
+  font: Helvetica;
+  font-style: oblique;
+  font-weight: 900; 
+  font-size:4vw;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 130px;
+  text-align: center;
+  padding-left: 120px;
+  background-color: #17327c;
+}
+
+/* pagina de registro */
+
+
+.form-wrapper {
+  background-color: rgba(255, 255, 255, 0.547);
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.form-group {
+  margin: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input,
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1060b1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #034558;
+}
+
+#titulo-formulario{
+  font: bold;
+}
+
+
+.flash-message {
+  background-color: white;
+  color: black;
+  font-size: 24px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.greetings {
+  padding-left: 400px;
+  padding-right: 20px;
+  align-items: absolute;
+  padding-top: 0px;
+}
+
+
+form button {
+  padding-top: 20;
+  padding-bottom: 0;
+  padding-left: 100;
+}
+
+
+
+footer {
+  position: bottom;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #17327c;
+  color: white;
+  text-align: center;
+}

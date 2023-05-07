@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Editar Paciente</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='contacts.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Editar Paciente</h1>
+      <form method="POST" action="{{ url_for('edit_paciente', id=patient[0]) }}">
+        <div class="field">
+          <label class="label" for="nombre">Nombre:</label>
+          <div class="control">
+            <input class="input" type="text" id="nombre" name="nombre" value="{{ patient[1] }}" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="apellido_pat">Apellido Paterno:</label>
+          <div class="control">
+            <input class="input" type="text" id="apellido_pat" name="apellido_pat" value="{{ patient[2] }}" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="apellido_mat">Apellido Materno:</label>
+          <div class="control">
+            <input class="input" type="text" id="apellido_mat" name="apellido_mat" value="{{ patient[3] }}" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="correo">Correo:</label>
+          <div class="control">
+            <input class="input" type="text" id="correo" name="correo" value="{{ patient[4] }}" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="telefono">Telefono:</label>
+          <div class="control">
+            <input class="input" type="tel" id="telefono" name="telefono" value="{{ patient[6] }}" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="cuidad">Cuidad:</label>
+          <div class="control">
+            <input class="input" type="text" id="cuidad" name="cuidad" value="{{ patient[7] }}" required>
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <button class="button is-link" type="submit">Guardar cambios</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

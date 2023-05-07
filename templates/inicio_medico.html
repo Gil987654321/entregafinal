@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link rel="stylesheet" type="text/css" href="/static/login.css">
+</head>
+<body>
+  <main>
+
+    <!-- BARRA DE NAVEGACION -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light transparent-navbar blurred-navbar navbar-text" style="width:100%; margin:0;">
+      <a class="navbar-brand" href="index.html">
+      <img src="/static/logo/logo.png" alt="Your Logo" height="80">
+     </a>
+    </nav>
+    <br>
+    <br>
+    <!-- FIN DE BARRA DE NAVEGACION --> 
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="container">
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+<br><br><br>
+    <!-- FORMULARIO DE LOGIN -->
+    <div class="container">
+      <h1>ACCESSO SOLO PERSONAL AUTORIZADO</h1>
+    </div>
+    <br><br>
+    <div class="form-wrapper">
+      <h2 id="titulo-formulario">Iniciar Sesión</h2>
+      <form action="/login_medico.html" method="POST">
+        <div class="form-group">
+          <label for="email_m">Correo:</label>
+          <input type="text" id="email_m" name="email_m" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Correo Electrónico" required>
+        </div>
+        <div class="form-group">
+          <label for="password_m">Password:</label>
+          <input type="password" id="password_m" name="password_m" placeholder="Contraseña" required>
+        </div>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <p>Es doctor y no tiene una cuenta? <a href="/registro_medico.html">Dale click aqui para Registrarse!</a>.</p>
+    </div>
+    <!-- FIN DE FORMULARIO DE LOGIN -->
+
+    <!--FOOTER-->
+    <br><br><br><br><br><br>
+    <footer>
+      <p>TALLER DE DESARROLLO 4 &copy; BRYAN ANDREW CASTRO VALENCIA 6M</p>
+    </footer>
+    <!--FIN DE FOOTER-->
