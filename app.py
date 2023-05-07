@@ -347,7 +347,4 @@ def inicio_medico():
 @app.route('/registro_medico.html')
 def registro_medico():
     return render_template("registro_medico.html")
-
-
-if __name__ == '__main__':
-    app.run(debug = True, host='0.0.0.0', port= 4000)       
+    
